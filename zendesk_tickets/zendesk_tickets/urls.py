@@ -19,8 +19,9 @@ from zendesk_tickets_app.views import zendeskHome,zendeskConnect,ticketDescripti
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', zendeskHome.as_view(template_name='home.html'), name='HomeView'),
+    #path('', zendeskHome.as_view(template_name='home.html'), name='HomeView'),
     #path(r'connect/', zendeskConnect.as_view(template_name='connect.html'), name='ConnectView'),
+    path('', zendeskHome, name='HomeView'),
     path(r'connect/', zendeskConnect, name='ConnectView'),
     path(r'connect/ticket', ticketDescription, name = 'TicketDescriptionView'),
 ]
