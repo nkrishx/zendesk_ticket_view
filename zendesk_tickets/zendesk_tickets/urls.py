@@ -15,13 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from zendesk_tickets_app.views import zendeskHome,zendeskConnect,ticketDescription
+from zendesk_tickets_app.views import zendeskHome,zendeskConnect,zendeskticketDescription
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('', zendeskHome.as_view(template_name='home.html'), name='HomeView'),
-    #path(r'connect/', zendeskConnect.as_view(template_name='connect.html'), name='ConnectView'),
     path('', zendeskHome, name='HomeView'),
     path(r'connect/', zendeskConnect, name='ConnectView'),
-    path(r'connect/ticket', ticketDescription, name = 'TicketDescriptionView'),
+    path(r'connect/ticket', zendeskticketDescription, name = 'TicketDescriptionView'),
 ]

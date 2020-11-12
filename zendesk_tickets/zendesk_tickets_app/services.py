@@ -9,14 +9,14 @@ def get_tickets():
 
     response = requests.get(url, auth=(user, pwd))
 
-    if response.status_code != 200:
-        return(response.status_code)
-    else:
+    if response.ok:
         tickets = response.json()
         tickets_list = []
         for i in range(len(tickets['tickets'])):
             tickets_list.append(tickets['tickets'][i])
         return tickets_list
+    else:
+        return None
 
 def get_ticket_details(id):
     url = 'https://sample4450.zendesk.com/api/v2/tickets/'+id+'.json'
