@@ -17,16 +17,8 @@
                         </thead>
                 <tbody class = "text-center">
             <tr>
-      					<td class="text-left">ID</td>
-      					<td>{{ ticket_details.id }}</td>
-            </tr>
-            <tr>
-							<td class="text-left">Subject</td>
-							<td>{{ ticket_details.subject }}</td>
-            </tr>
-			      <tr>
-							<td class="text-left">Description</td>
-							<td >{{ ticket_details.description }}</td>
+      					<td class="text-left">Description</td>
+      					<td >{{ ticket_details.description }}</td>
             </tr>
             <tr>
 							<td class="text-left">Url</td>
@@ -37,11 +29,31 @@
 							<td >{{ ticket_details.created_at }}</td>
             </tr>
             <tr>
-							<td class="text-left">Tags</td>
-							<td >{{ ticket_details.tags }}</td>
+              <td class="text-left">Status</td>
+              <td >{{ ticket_details.status }}</td>
             </tr>
             <tr>
-							<td class="text-left">Has Incidents</td>
+      					<td class="text-left">ID</td>
+      					<td>{{ ticket_details.id }}</td>
+            </tr>
+            <tr>
+              <td class="text-left">Asignee ID</td>
+              <td >{{ ticket_details.assignee_id }}</td>
+            </tr>
+            <tr>
+              <td class="text-left">Organization ID</td>
+              <td >{{ ticket_details.organization_id }}</td>
+            </tr>
+            <tr>
+              <td class="text-left">Brand ID</td>
+              <td >{{ ticket_details.brand_id }}</td>
+            </tr>
+            <tr>
+							<td class="text-left">Is Public</td>
+							<td >{{ ticket_details.is_public }}</td>
+            </tr>
+            <tr>
+							<td class="text-left">Incidents</td>
 							<td >{{ ticket_details.has_incidents }}</td>
             </tr>
                 </tbody>

@@ -11,6 +11,8 @@ from .services import get_tickets,get_ticket_details
 
 class HomePageTests(SimpleTestCase):
     #test for Homepage
+    #test based on status code, url and template contents
+    
     def test_home_page_status_code(self):
         response = self.client.get('/')
         self.assertEquals(response.status_code, 200)
@@ -38,6 +40,7 @@ class HomePageTests(SimpleTestCase):
 
 class TicketViewerTests(SimpleTestCase):
     #test for ticket viewer page
+
     def test_ticketviewer_page_status_code(self):
         response = self.client.get('/connect',follow=True)
         self.assertEquals(response.status_code, 200)

@@ -7,6 +7,7 @@ from django.http import JsonResponse,HttpResponse
 # Create your views here.
 
 def zendeskHome(request):
+    #home page view
     return render(request,'home.html')
 
 def zendeskConnect(request):
@@ -27,10 +28,12 @@ def zendeskConnect(request):
         #page_obj = paginator.get_page(page_number)
         return render(request, 'connect.html', {'tickets': tickets})
     except:
+        #render the page not found template if passed wrong API request url
         return render(request, 'exception.html')
 
 
 def zendeskticketDescription(request, ticket_id=None):
+    #ticket description view, return the HTTP Resposne to bypass exception thrown during ticketview pagination rendering
     if ticket_id:
         ticket_details = get_ticket_details(ticket_id)
         return render(request,'ticket_details.html',{'ticket_details':ticket_details})
