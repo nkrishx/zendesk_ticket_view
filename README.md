@@ -2,7 +2,7 @@
 
 # zendesk ticket viewer coding challenge
 
-###### A simple django application which meets the below tasks.
+### A simple django application which meets the below tasks.
 
 ### Task List
 
