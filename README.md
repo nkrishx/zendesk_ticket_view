@@ -17,8 +17,10 @@
 * Clone the repo.
 * Create a virtual environment on your machine and activate it.
 * pip install the dependencies via the requirments.txt provided.
+* _pip install -r requirments.txt_
 * Change directory to path conatining manage.py file.
-* Run the local development server using the command  _python manage.py runserver_.
+* Run the local development server using the below command 
+* _python manage.py runserver_.
 * Type http://127.0.0.1:8000 in your browser to visit the homepage.
 * Click the home button on the side bar menu to return to this home page.
 * Click on the List Tickets button to retrieve all tickets.
