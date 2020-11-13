@@ -4,11 +4,11 @@
 
 {% block content %}
     <!-- body here -->
-    <<div id="content" class="p-4 p-md-5 pt-5 text-center">
+    <div id="content" class="p-4 p-md-5 pt-5 text-center">
         <div class="container">
             <h1 class="display-8">Ticket Viewer</h1>
         </div>
- <div id= "ticket-table" class="container py-5">
+ <div class="container py-5">
         <div class="row">
             <div class="col-lg-7 mx-auto rounded shadow">
                 <div class="table-responsive">
@@ -25,7 +25,7 @@
                 <tbody class = "text-center">
 						        {% for ticket in tickets %}
             <tr>
-							<td scope="row" class="ticket-button col-3 text-left" id="{{ ticket.id }}"><a href="#">{{ ticket.subject }}</a></td>
+							<td scope="row" class="ticket-button col-3 text-left" id="{{ ticket.id }}"><a href="ticket/{{ ticket.id }}">{{ ticket.subject }}</a></td>
               <td class="col-3">{{ ticket.id }}</td>
 							<td class="col-3">{{ ticket.priority }}</td>
 							<td class="col-3">{{ ticket.status }}</td>

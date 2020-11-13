@@ -3,7 +3,7 @@ from django.views.generic import TemplateView,ListView
 from .services import get_tickets,get_ticket_details
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json
-from django.http import JsonResponse
+from django.http import JsonResponse,HttpResponse
 # Create your views here.
 
 def zendeskHome(request):
@@ -30,9 +30,9 @@ def zendeskConnect(request):
         return render(request, 'exception.html')
 
 
-def zendeskticketDescription(request):
-    #check if ajax request and get the id of the ticket. Sanity check
-    if request.method == 'GET' and request.is_ajax():
-        ticket_id = request.GET.get('ticket_id')
+def zendeskticketDescription(request, ticket_id=None):
+    if ticket_id:
         ticket_details = get_ticket_details(ticket_id)
-        return JsonResponse(ticket_details)
+        return render(request,'ticket_details.html',{'ticket_details':ticket_details})
+    else:
+        return HttpResponse(status=204)
